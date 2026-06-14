@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerMatch AI 求职智能匹配助手</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <div class="logo">CareerMatch AI</div>
+      <div class="nav-links">
+        <a href="#demo">开始体验</a>
+        <a href="#features">功能设计</a>
+        <a href="#deploy">部署说明</a>
+      </div>
+    </nav>
+    <section class="hero-content">
+      <div>
+        <p class="tag">AI求职智能体 · 岗位匹配 · 简历优化 · 投递策略</p>
+        <h1>帮学生快速找到合适岗位，提升简历初筛命中率</h1>
+        <p class="subtitle">输入简历与岗位JD，系统自动生成学生画像、岗位解析、匹配评分、简历优化建议与投递优先级。</p>
+        <a class="primary-btn" href="#demo">立即体验 Demo</a>
+      </div>
+      <div class="hero-card">
+        <span>综合匹配度</span>
+        <strong id="heroScore">86%</strong>
+        <p>推荐投递：产品运营实习生</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="features" class="section">
+      <h2>智能体核心能力</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>学生画像生成</h3><p>自动识别专业、技能、实习、项目、职业兴趣。</p></div>
+        <div class="feature-card"><h3>岗位JD解析</h3><p>拆解职责、硬技能、软技能、行业关键词。</p></div>
+        <div class="feature-card"><h3>匹配度评分</h3><p>从技能、经历、行业、兴趣四维计算匹配度。</p></div>
+        <div class="feature-card"><h3>简历优化建议</h3><p>输出关键词补充、经历改写、STAR表达建议。</p></div>
+      </div>
+    </section>
+
+    <section id="demo" class="section demo-section">
+      <div class="section-head">
+        <h2>可运行 Demo</h2>
+        <button class="ghost-btn" onclick="fillExample()">填入示例数据</button>
+      </div>
+
+      <div class="input-grid">
+        <div class="panel">
+          <label>学生简历 / 个人背景</label>
+          <textarea id="resume" placeholder="例如：工商管理专业大一学生，参与校园社群运营，熟悉Excel、问卷调研、数据分析……"></textarea>
+        </div>
+        <div class="panel">
+          <label>目标岗位JD</label>
+          <textarea id="jd" placeholder="例如：产品运营实习生，负责用户调研、数据分析、内容运营、活动策划……"></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="primary-btn" onclick="analyzeMatch()">AI智能匹配分析</button>
+        <button class="secondary-btn" onclick="resetAll()">清空重置</button>
+      </div>
+
+      <div id="result" class="result hidden">
+        <div class="score-card">
+          <div>
+            <p>综合匹配度</p>
+            <h3 id="scoreText">0%</h3>
+          </div>
+          <div class="progress"><span id="progressBar"></span></div>
+          <strong id="jobLevel">待分析</strong>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-box"><h3>学生画像</h3><ul id="profileList"></ul></div>
+          <div class="result-box"><h3>岗位关键词匹配</h3><ul id="keywordList"></ul></div>
+          <div class="result-box"><h3>简历优化建议</h3><ul id="adviceList"></ul></div>
+          <div class="result-box"><h3>投递策略</h3><p id="strategyText"></p></div>
+        </div>
+
+        <div class="result-box full">
+          <h3>AI优化版经历表述</h3>
+          <p id="rewriteText"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="deploy" class="section deploy">
+      <h2>公网部署方式</h2>
+      <p>本项目是纯前端静态网页，可直接上传到 Vercel、Netlify 或 GitHub Pages。推荐使用 Vercel：导入项目文件夹后点击 Deploy，即可生成公网链接。</p>
+    </section>
+  </main>
+
+  <footer>CareerMatch AI Demo · For Student Career Matching</footer>
+  <script src="app.js"></script>
+</body>
+</html>
